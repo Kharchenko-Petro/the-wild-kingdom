@@ -417,8 +417,6 @@ body {
 }
 
 .header {
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
   left: 0;
   position: fixed;
   top: 0;
