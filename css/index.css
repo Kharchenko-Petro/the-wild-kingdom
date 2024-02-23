@@ -254,6 +254,8 @@ body {
 }
 
 .menu-icon {
+  border: none;
+  outline: none;
   display: none;
 }
 @media screen and (max-width: 767.98px) {
@@ -415,8 +417,8 @@ body {
 }
 
 .header {
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   left: 0;
   position: fixed;
   top: 0;
