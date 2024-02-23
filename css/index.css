@@ -493,10 +493,9 @@ body {
 .logo svg {
   vertical-align: top;
   width: 217px;
-  transition: all 0.4s;
 }
 .logo svg:hover path {
-  transition: all 0.4s;
+  transition: fill 0.4s;
   fill: #9d875c;
 }
 @media screen and (max-width: 1399.98px) {
@@ -511,17 +510,17 @@ body {
 }
 @media screen and (max-width: 991.98px) {
   .logo svg {
-    width: 113px;
+    width: 115px;
   }
 }
 @media screen and (max-width: 767.98px) {
   .logo svg {
-    width: 90px;
+    width: 110px;
   }
 }
 @media screen and (max-width: 575.98px) {
   .logo svg {
-    width: 70px;
+    width: 80px;
   }
 }
 

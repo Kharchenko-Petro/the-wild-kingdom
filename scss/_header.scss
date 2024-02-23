@@ -220,10 +220,9 @@
   svg {
     vertical-align: top;
     width: 217px;
-    transition: all 0.4s;
     &:hover {
       path {
-        transition: all 0.4s;
+        transition: fill 0.4s;
         fill: $color-secondary-darker;
       }
     }
@@ -240,17 +239,17 @@
   }
   @media screen and (max-width: $breakpoint-lg) {
     svg {
-      width: 113px;
+      width: 115px;
     }
   }
   @media screen and (max-width: $breakpoint-md) {
     svg {
-      width: 90px;
+      width: 110px;
     }
   }
   @media screen and (max-width: $breakpoint-sm) {
     svg {
-      width: 70px;
+      width: 80px;
     }
   }
 }
