@@ -1,0 +1,39 @@
+//===== BASE ===========================================================================================================================================================================================================================================================================
+html,
+body {
+  height: 100%;
+}
+body {
+  background-color: $color-bg;
+  color: $color-primary;
+  font-family: $ff-main;
+  font-size: $fz-xxsm;
+  font-weight: $fw-regular;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.container {
+  padding-inline: 15px;
+  max-width: 1602px;
+  margin: 0 auto;
+  @media screen and (max-width: $breakpoint-xxl) {
+    max-width: $container-max-width-xxl + 30;
+  }
+  @media screen and (max-width: $breakpoint-xl) {
+    max-width: $container-max-width-xl + 30;
+  }
+  @media screen and (max-width: $breakpoint-lg) {
+    max-width: $container-max-width-lg + 30;
+  }
+  @media screen and (max-width: $breakpoint-md) {
+    max-width: $container-max-width-md + 30;
+  }
+  @media screen and (max-width: $breakpoint-sm) {
+    max-width: $container-max-width-sm + 30;
+  }
+  @media screen and (max-width: $breakpoint-xs) {
+  }
+}

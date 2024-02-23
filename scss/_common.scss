@@ -1,0 +1,74 @@
+.section-image-frame {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    border: 1px solid $color-secondary-darker;
+  }
+}
+.section-title {
+  line-height: 1.56;
+  text-transform: capitalize;
+}
+.section-label {
+  color: $color-secondary-darker;
+  font-family: $ff-secondary;
+  font-size: 48px;
+  text-transform: capitalize;
+}
+.button {
+  display: inline-block;
+  background: transparent;
+  border: 1px solid $color-secondary;
+  border-radius: 50px;
+  color: $color-secondary;
+  cursor: pointer;
+  font-weight: $fw-light;
+  line-height: 1.56;
+  padding: 10px 38px;
+  transition: all 0.4s;
+  overflow: hidden;
+  @media screen and (max-width: $breakpoint-xxl) {
+    padding: 8px 32px;
+  }
+  @media screen and (max-width: $breakpoint-xl) {
+    padding: 7px 30px;
+  }
+  @media screen and (max-width: $breakpoint-lg) {
+    padding: 5px 26px;
+  }
+  @media screen and (max-width: $breakpoint-md) {
+    display: inline-block;
+  }
+  &:hover {
+    color: $color-white;
+    background-color: $color-secondary;
+  }
+  &__gold {
+    background: #bbb6a8 url(../img/button-bg.jpg) center no-repeat;
+    background-blend-mode: soft-light;
+    background-size: cover;
+  }
+}
+.service-card {
+  display: grid;
+  justify-items: center;
+  row-gap: 29px;
+  &__icon {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background: #bbb6a8 url(../img/button-bg.jpg) center no-repeat;
+    background-blend-mode: soft-light;
+    background-size: cover;
+    border-radius: 50%;
+    height: 140px;
+    width: 140px;
+    overflow: hidden;
+  }
+  &__label {
+    font-family: $ff-secondary;
+    font-size: $fz-sm;
+    text-transform: capitalize;
+  }
+}

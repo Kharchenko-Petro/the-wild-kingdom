@@ -1,0 +1,77 @@
+//===== PAGE ===========================================================================================================================================================================================================================================================================
+.page {
+  flex: 1 1 auto;
+}
+.page__hero {
+}
+.page__about-us {
+  background: $color-bg url("../img/about-us/about-us-bg-decor.jpg") 0 -533px no-repeat;
+  background-blend-mode: lighten;
+  background-size: contain;
+  padding-block: 190px 75px;
+}
+
+.hero {
+  background: url('../img/hero/bg.jpg') center no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+//===== ABOUT-US ===========================================================================================================================================================================================================================================================================
+.about-us {
+  &__container {
+  }
+  &__content {
+    &:not(:last-child) {
+      margin-bottom: 98px;
+    }
+  }
+  &__services {
+  }
+}
+.about-content {
+  display: flex;
+  column-gap: 115px;
+  &__image {
+    flex: 0 0 820px;
+    &::before {
+      height: 554px;
+      left: -19px;
+      top: -19px;
+      width: 858px;
+    }
+  }
+  &__info {
+    margin-top: 91px;
+    & > * {
+      margin-bottom: 20px;
+    }
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__title {
+  }
+  &__label {
+  }
+  &__quote {
+    font-style: $fw-italic;
+    line-height: 1.56;  
+  }
+  &__description {
+    line-height: 1.56;
+    max-width: 458px;
+  }
+  &__button {
+  }
+}
+.about-services {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  gap: 50px 15px;
+  justify-content: space-between;
+  max-width: 1024px;
+  margin: 0 auto;
+  &__item {
+  }
+}

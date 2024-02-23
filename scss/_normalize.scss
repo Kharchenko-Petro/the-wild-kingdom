@@ -1,0 +1,43 @@
+*,
+*::before,
+*::after {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+	color: inherit;
+  &:link,
+  &:visited,
+  &:hover {
+    text-decoration: none;
+  }
+}
+button,
+input,
+textarea {
+  font-family: $ff-main;
+  font-size: inherit;
+}
+button {
+  background-color: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+img {
+  vertical-align: top;
+  width: 100%;
+}
+li {
+  list-style: none;
+}
