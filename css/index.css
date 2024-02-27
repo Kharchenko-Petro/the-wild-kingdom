@@ -452,7 +452,7 @@ body {
   left: 0;
   top: 0;
   width: 1000%;
-  background-color: hsla(228, 24%, 6%, 0.5);
+  background-color: hsla(60, 3%, 13%, 0.65);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   z-index: -1;
@@ -494,9 +494,11 @@ body {
     min-height: 60px;
   }
 }
+.header__logo {
+  vertical-align: bottom;
+}
 @media screen and (max-width: 767.98px) {
   .header__logo {
-    vertical-align: middle;
     justify-self: center;
   }
 }
