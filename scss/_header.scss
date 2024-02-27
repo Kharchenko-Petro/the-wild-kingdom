@@ -87,9 +87,11 @@
     width: 0;
     transition: all 0.4s;
   }
-  &:hover {
-    &::after {
-      width: 35%;
+  @media (any-hover: hover) {
+    &:hover {
+      &::after {
+        width: 35%;
+      }
     }
   }
 }
@@ -108,6 +110,22 @@
     top: 0;
     transition: right 0.4s;
     &.menu-open {
+      right: 0;
+    }
+  }
+  @media screen and (max-width: $breakpoint-sm) {
+    width: 100%;
+    &::after {
+      content: "";
+      background-color: $color-primary;
+      height: 60px;
+      right: -100%;
+      top: 0;
+      position: fixed;
+      transition: right 0.4s;
+      width: 100%;
+    }
+    &.menu-open::after {
       right: 0;
     }
   }
@@ -158,6 +176,18 @@
   top: 0;
   width: 100%;
   z-index: 100;
+  &.blur-header::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 1000%;
+    background-color: hsla(228, 24%, 6%, .5);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    z-index: -1;
+  }
   // .header__container
   &__container {
     display: grid;
@@ -220,10 +250,12 @@
   svg {
     vertical-align: top;
     width: 217px;
-    &:hover {
-      path {
-        transition: fill 0.4s;
-        fill: $color-secondary-darker;
+    @media (any-hover: hover) {
+      &:hover {
+        path {
+          transition: fill 0.4s;
+          fill: $color-secondary-darker;
+        }
       }
     }
   }
@@ -248,6 +280,7 @@
     }
   }
   @media screen and (max-width: $breakpoint-sm) {
+    z-index: 5;
     svg {
       width: 80px;
     }

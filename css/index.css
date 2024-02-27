@@ -220,9 +220,11 @@ body {
     display: inline-block;
   }
 }
-.button:hover {
-  color: #ffffff;
-  background-color: #c1ab81;
+@media (any-hover: hover) {
+  .button:hover {
+    color: #ffffff;
+    background-color: #c1ab81;
+  }
 }
 .button__gold {
   background: #bbb6a8 url(../img/button-bg.jpg) center no-repeat;
@@ -344,8 +346,10 @@ body {
   width: 0;
   transition: all 0.4s;
 }
-.header-link:hover::after {
-  width: 35%;
+@media (any-hover: hover) {
+  .header-link:hover::after {
+    width: 35%;
+  }
 }
 
 @media screen and (max-width: 767.98px) {
@@ -364,6 +368,24 @@ body {
     transition: right 0.4s;
   }
   .nav-menu.menu-open {
+    right: 0;
+  }
+}
+@media screen and (max-width: 575.98px) {
+  .nav-menu {
+    width: 100%;
+  }
+  .nav-menu::after {
+    content: "";
+    background-color: #222220;
+    height: 60px;
+    right: -100%;
+    top: 0;
+    position: fixed;
+    transition: right 0.4s;
+    width: 100%;
+  }
+  .nav-menu.menu-open::after {
     right: 0;
   }
 }
@@ -422,6 +444,18 @@ body {
   top: 0;
   width: 100%;
   z-index: 100;
+}
+.header.blur-header::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 1000%;
+  background-color: hsla(228, 24%, 6%, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: -1;
 }
 .header__container {
   display: grid;
@@ -494,9 +528,11 @@ body {
   vertical-align: top;
   width: 217px;
 }
-.logo svg:hover path {
-  transition: fill 0.4s;
-  fill: #9d875c;
+@media (any-hover: hover) {
+  .logo svg:hover path {
+    transition: fill 0.4s;
+    fill: #9d875c;
+  }
 }
 @media screen and (max-width: 1399.98px) {
   .logo svg {
@@ -519,6 +555,9 @@ body {
   }
 }
 @media screen and (max-width: 575.98px) {
+  .logo {
+    z-index: 5;
+  }
   .logo svg {
     width: 80px;
   }

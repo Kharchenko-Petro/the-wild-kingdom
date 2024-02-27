@@ -40,9 +40,11 @@
   @media screen and (max-width: $breakpoint-md) {
     display: inline-block;
   }
-  &:hover {
-    color: $color-white;
-    background-color: $color-secondary;
+  @media (any-hover: hover) {
+    &:hover {
+      color: $color-white;
+      background-color: $color-secondary;
+    }
   }
   &__gold {
     background: #bbb6a8 url(../img/button-bg.jpg) center no-repeat;
