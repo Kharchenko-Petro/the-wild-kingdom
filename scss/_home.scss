@@ -1,3 +1,21 @@
+.sometext {
+  padding-block: 140px;
+  @media screen and (max-width: $breakpoint-xxl) {
+    padding-block: 120px;
+  }
+  @media screen and (max-width: $breakpoint-xl) {
+    padding-block: 100px;
+  }
+  @media screen and (max-width: $breakpoint-lg) {
+    padding-block: 80px;
+  }
+  @media screen and (max-width: $breakpoint-md) {
+    padding-block: 70px;
+  }
+  @media screen and (max-width: $breakpoint-sm) {
+    padding-block: 60px;
+  }
+}
 //===== PAGE ===========================================================================================================================================================================================================================================================================
 .page {
   flex: 1 1 auto;
@@ -12,10 +30,7 @@
 }
 
 .hero {
-  background: url('../img/hero/bg.jpg') center no-repeat;
-  background-size: cover;
-  height: 100vh;
-  width: 100%;
+
 }
 //===== ABOUT-US ===========================================================================================================================================================================================================================================================================
 .about-us {

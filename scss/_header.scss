@@ -76,24 +76,6 @@
   color: $color-secondary;
   font-weight: $fw-light;
   line-height: calc(25 / 18);
-  position: relative;
-  &::after {
-    content: "";
-    background-color: $color-secondary;
-    position: absolute;
-    height: 1px;
-    left: 0;
-    bottom: -1px;
-    width: 0;
-    transition: all 0.4s;
-  }
-  @media (any-hover: hover) {
-    &:hover {
-      &::after {
-        width: 35%;
-      }
-    }
-  }
 }
 .nav-menu {
   @media screen and (max-width: $breakpoint-md) {
@@ -219,7 +201,6 @@
   }
   // .header__logo
   &__logo {
-    vertical-align: bottom;
     @media screen and (max-width: $breakpoint-md) {
       justify-self: center;
     }
@@ -248,7 +229,7 @@
 }
 .logo {
   svg {
-    vertical-align: top;
+    vertical-align: bottom;
     width: 217px;
     @media (any-hover: hover) {
       &:hover {

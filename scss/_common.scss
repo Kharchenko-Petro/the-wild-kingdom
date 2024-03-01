@@ -74,3 +74,23 @@
     text-transform: capitalize;
   }
 }
+.hover {
+  position: relative;
+  &::after {
+    content: "";
+    background-color: $color-secondary;
+    position: absolute;
+    height: 1px;
+    left: 0;
+    bottom: -1px;
+    width: 0;
+    transition: all 0.4s;
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      &::after {
+        width: 35%;
+      }
+    }
+  }
+}
