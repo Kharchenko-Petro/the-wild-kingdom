@@ -315,6 +315,7 @@ body {
     top: calc(50% - 1px);
   }
   .menu-open ~ .menu-icon span {
+    left: calc(50% - 1px);
     width: 0;
   }
   .menu-open ~ .menu-icon::before {
@@ -918,6 +919,7 @@ body {
   .footer__menu-list {
     grid-template-columns: 1fr;
     justify-items: start;
+    padding-left: 10px;
   }
 }
 @media screen and (max-width: 768.98px) {
@@ -961,6 +963,7 @@ body {
     row-gap: 25px;
     align-content: flex-end;
     justify-content: center;
+    padding-right: 10px;
   }
 }
 .footer__socials-link {
@@ -1027,6 +1030,7 @@ body {
 @media screen and (max-width: 375.98px) {
   .footer__logo {
     justify-self: center;
+    padding: 0;
   }
 }
 .footer__subscribe {

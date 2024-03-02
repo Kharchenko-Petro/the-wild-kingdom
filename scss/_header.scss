@@ -30,6 +30,7 @@
     }
     .menu-open ~ & {
       span {
+        left: calc(50% - 1px);
         width: 0;
       }
       &::before {

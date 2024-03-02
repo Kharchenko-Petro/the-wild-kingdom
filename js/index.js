@@ -28,7 +28,7 @@ window.addEventListener('scroll', blurHeader);
 
 function blurHeader() {
   const header = document.querySelector(".header");
-  this.scrollY >= 50
+  this.scrollY >= 10
     ? header.classList.add("blur-header")
     : header.classList.remove("blur-header");
 }
