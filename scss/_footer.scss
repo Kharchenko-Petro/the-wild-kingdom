@@ -2,263 +2,337 @@
   background-color: $color-primary;
   color: $color-secondary;
   position: relative;
+
   &::before,
   &::after {
     content: "";
     height: 100%;
-    width: 174px;
+    width: rem(174);
     position: absolute;
-    @media screen and (max-width: 1730px) {
+
+    @media screen and (max-width: em(1734.98)) {
       opacity: 0.1;
       pointer-events: none;
     }
+
+    @media screen and (max-width: em($br-maw-sm)) {
+      display: none;
+    }
   }
+
   &::before {
     background: url("../img/footer/footer-decor.svg") left bottom / 100%
       no-repeat;
     left: 0;
     bottom: 0;
   }
+
   &::after {
     background: url("../img/footer/footer-decor.svg") right top / 100% no-repeat;
     right: 0;
     top: 0;
     transform: rotate(180deg);
   }
+
   // .footer__container
   &__container {
-    padding-block: 101px 35px;
-    @media screen and (max-width: $breakpoint-xxl) {
-      padding-block: 74px 26px;
-    }
-    @media screen and (max-width: $breakpoint-xl) {
-      padding-block: 64px 22px;
-    }
-    @media screen and (max-width: $breakpoint-lg) {
-      padding-block: 53px 18px;
-    }
-    @media screen and (max-width: $breakpoint-md) {
-      padding-top: 40px;
-    }
-    @media screen and (max-width: $breakpoint-sm) {
-      padding-top: 30px;
+    @include adaptiveValue(
+      "padding-top",
+      101,
+      50,
+      $containerWidth,
+      $br-miw-sm,
+      1
+    );
+    @include adaptiveValue(
+      "padding-bottom",
+      35,
+      20,
+      $containerWidth,
+      $br-miw-sm,
+      1
+    );
+
+    @media screen and (max-width: em($br-maw-xxxs)) {
+      padding-top: rem(30);
     }
   }
+  //? --------------------------------------------------------------------------------------------------------------------------------------------------
+  //! Продовжуй звідси ---------------------------------------------------------------------------------------------------------------------------------
+  //? -------------------------------------------------------------------------------------------------------------------------------------------------
+
   // .footer__content
   &__content {
-    border-bottom: 1px solid $color-secondary;
+    border-bottom: rem(1) solid $color-secondary;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding-bottom: 54px;
-    margin-bottom: 42px;
-    @media screen and (max-width: $breakpoint-xxl) {
-      padding-bottom: 40px;
-      margin-bottom: 31px;
+    @include adaptiveValue(
+      "padding-bottom",
+      54,
+      25,
+      $containerWidth,
+      $br-miw-sm,
+      1
+    );
+    @include adaptiveValue(
+      "margin-bottom",
+      42,
+      18,
+      $containerWidth,
+      $br-miw-sm,
+      1
+    );
+
+    @media screen and (max-width: em($br-maw-lg)) {
+      grid-template-columns: 1fr auto 1fr;
     }
-    @media screen and (max-width: $breakpoint-xl) {
-      padding-bottom: 34px;
-      margin-bottom: 27px;
+
+    @media screen and (max-width: em($br-maw-md)) {
+      grid-template-columns: auto 1fr;
+      @include adaptiveValue("row-gap", 30, 20, $br-maw-md, $br-maw-sm);
     }
-    @media screen and (max-width: $breakpoint-lg) {
-      padding-bottom: 28px;
-      margin-bottom: 22px;
+
+    @media screen and (max-width: em($br-maw-sm)) {
+      gap: rem(30);
     }
-    @media screen and (max-width: $breakpoint-md) {
-      grid-template-columns: repeat(2, 1fr);
-      row-gap: 35px;
-    }
-    @media screen and (max-width: $breakpoint-sm) {
-      row-gap: 18px;
-      padding-bottom: 18px;
-      margin-bottom: 18px;
-    }
-    @media screen and (max-width: $breakpoint-xs) {
+
+    @media screen and (max-width: em($br-maw-xxs)) {
       grid-template-columns: 1fr;
     }
   }
+
   // .footer__nav
   &__nav {
-    padding-right: 10px;
+    padding-right: rem(10);
     position: relative;
-    @media screen and (max-width: $breakpoint-md) {
+
+    @media screen and (max-width: em($br-maw-md)) {
       display: grid;
-      justify-content: end;
-      left: 0;
-      order: 1;
-      padding-inline: 10px 0;
-    }
-    @media screen and (max-width: $breakpoint-xs) {
+      grid-column: 1 / 3;
       grid-template-columns: 1fr auto;
-      padding-inline: 10px;
+      padding-right: 0;
+      column-gap: rem(20);
+      order: 1;
     }
+
+    @media screen and (max-width: em($br-maw-sm)) {
+      grid-column: initial;
+      grid-template-columns: 1fr;
+      justify-items: end;
+      row-gap: rem(20);
+    }
+
+    @media screen and (max-width: em($br-maw-xxs)) {
+      grid-template-columns: 1fr auto;
+      padding-inline: rem(10);
+      justify-items: start;
+    }
+
     &::before {
       content: "";
-      background-color: $color-secondary;
-      width: 1px;
-      height: calc(100% + 18px);
       position: absolute;
-      top: -9px;
+      background-color: $color-secondary;
+      width: rem(1);
+      height: calc(100% + rem(18));
       right: 0;
-      @media screen and (max-width: $breakpoint-xxl) {
-        height: calc(100% + 14px);
-        top: -7px;
+      top: rem(-9);
+
+      @media screen and (max-width: em($br-maw-xl)) {
+        height: calc(100% + rem(14));
+        top: rem(-7);
       }
-      @media screen and (max-width: $breakpoint-xl) {
-        height: calc(100% + 12px);
-        top: -6px;
-      }
-      @media screen and (max-width: $breakpoint-lg) {
-        height: calc(100% + 10px);
-        top: -5px;
-      }
-      @media screen and (max-width: $breakpoint-md) {
-        left: 0;
-      }
-      @media screen and (max-width: $breakpoint-sm) {
+
+      @media screen and (max-width: em($br-maw-lg)) {
         display: none;
       }
     }
   }
+
   // .footer__menu
   &__menu {
     &:not(:last-child) {
-      margin-bottom: 39px;
-      @media screen and (max-width: $breakpoint-xxl) {
-        margin-bottom: 27px;
-      }
-      @media screen and (max-width: $breakpoint-xl) {
-        margin-bottom: 23px;
-      }
-      @media screen and (max-width: $breakpoint-lg) {
-        margin-bottom: 19px;
-      }
-      @media screen and (max-width: $breakpoint-md) {
-        margin-bottom: 20px;
-      }
-      @media screen and (max-width: $breakpoint-xs) {
-        margin-bottom: 0;
-      }
+      @include adaptiveValue(
+        "margin-bottom",
+        39,
+        20,
+        $containerWidth,
+        $br-maw-md
+      );
     }
   }
+
   // .footer__menu-title
   &__menu-title {
     font-family: $ff-secondary;
-    font-size: $fz-xsm;
-    @media screen and (max-width: $breakpoint-md) {
+    font-size: rem($fz-xsm);
+
+    @media screen and (max-width: em($br-maw-sm)) {
       text-align: end;
     }
+
+    @media screen and (max-width: em($br-maw-xs)) {
+      font-size: rem($fz-m);
+      text-decoration: underline;
+    }
+
+    @media screen and (max-width: em($br-maw-xxs)) {
+      text-align: start;
+      font-size: rem(26);
+    }
+
     &:not(:last-child) {
-      margin-bottom: 15px;
-      @media screen and (max-width: $breakpoint-xxl) {
-        margin-bottom: 11px;
-      }
-      @media screen and (max-width: $breakpoint-xl) {
-        margin-bottom: 10px;
-      }
-      @media screen and (max-width: $breakpoint-lg) {
-        margin-bottom: 8px;
-      }
-      @media screen and (max-width: $breakpoint-md) {
-        margin-bottom: 10px;
-      }
-      @media screen and (max-width: $breakpoint-sm) {
-        font-size: $fz-sm;
-      }
-      @media screen and (max-width: $breakpoint-xs) {
-        text-align: start;
+      @include adaptiveValue(
+        "margin-bottom",
+        15,
+        8,
+        $containerWidth,
+        $br-maw-md,
+        1
+      );
+
+      @media screen and (max-width: em($br-maw-xxs)) {
+        margin-bottom: rem(10);
       }
     }
   }
+
   // .footer__menu-list
   &__menu-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px 42px;
+    row-gap: rem(5);
+    @include adaptiveValue("column-gap", 42, 18, $containerWidth, $br-maw-md);
     font-weight: $fw-light;
-    line-height: calc(25 / 16);
-    @media screen and (max-width: $breakpoint-xxl) {
-      column-gap: 31px;
+    line-height: math.div(25, 16);
+
+    @media screen and (max-width: em($br-maw-md)) {
+      @include adaptiveValue("column-gap", 42, 30, $br-maw-md, $br-maw-sm, 1);
     }
-    @media screen and (max-width: $breakpoint-xl) {
-      column-gap: 25px;
+
+    @media screen and (max-width: em($br-maw-sm)) {
+      justify-content: end;
     }
-    @media screen and (max-width: $breakpoint-lg) {
-      column-gap: 22px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+
+    @media screen and (max-width: em($br-maw-xs)) {
+      flex-direction: column;
+      align-items: end;
     }
-    @media screen and (max-width: $breakpoint-md) {
-      justify-items: end;
-      row-gap: 10px;
+
+    @media screen and (max-width: em($br-maw-xxs)) {
+      align-items: start;
+      padding-left: rem(10);
+      row-gap: rem(10);
     }
-    @media screen and (max-width: $breakpoint-xs) {
-      grid-template-columns: 1fr;
-      justify-items: start;
-      padding-left: 10px;
+
+    @media screen and (max-width: em($br-maw-xxs)) {
+      padding-left: 0;
     }
   }
+
   // .footer__menu-item
   &__menu-item {
   }
+
   // .footer__menu-link
   &__menu-link {
-    @media screen and (max-width: $breakpoint-md) {
-      font-size: $fz-xsm;
+    @media screen and (max-width: em($br-maw-md)) {
+      @include adaptiveValue(
+        "font-size",
+        $fz-xsm,
+        18,
+        $br-maw-md,
+        $br-maw-sm,
+        1
+      );
+    }
+
+    @media screen and (max-width: em($br-maw-xs)) {
+      font-size: rem($fz-sm);
+    }
+
+    @media screen and (max-width: em($br-maw-xxs)) {
+      font-size: rem($fz-xsm);
     }
   }
+
   // .footer__socials
   &__socials {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px 42px;
-    @media screen and (max-width: $breakpoint-xxl) {
-      column-gap: 31px;
+    row-gap: rem(5);
+    @include adaptiveValue(
+      "column-gap",
+      42,
+      25,
+      $containerWidth,
+      $br-maw-sm,
+      1
+    );
+
+    @media screen and (max-width: em($br-maw-md)) {
+      align-self: end;
+      @include adaptiveValue("column-gap", 42, 32, $br-maw-md, $br-maw-sm, 1);
     }
-    @media screen and (max-width: $breakpoint-xl) {
-      column-gap: 27px;
-    }
-    @media screen and (max-width: $breakpoint-lg) {
-      column-gap: 22px;
-    }
-    @media screen and (max-width: $breakpoint-md) {
+
+    @media screen and (max-width: em($br-maw-sm)) {
       justify-content: end;
-      column-gap: 25px;
     }
-    @media screen and (max-width: $breakpoint-xs) {
+
+    @media screen and (max-width: em($br-maw-xxs)) {
       flex-direction: column;
-      row-gap: 25px;
+      row-gap: rem(20);
       align-content: flex-end;
       justify-content: center;
-      padding-right: 10px;
+      padding-right: rem(10);
+      padding-top: rem(42);
+    }
+
+    @media screen and (max-width: em($br-maw-xxs)) {
+      padding-right: 0;
     }
   }
+
   // .footer__socials-link
   &__socials-link {
     display: inline-block;
     transition: color 0.4s;
+
     @media (any-hover: hover) {
       &:hover {
         color: $color-white;
       }
     }
+
     i {
-      font-size: $fz-sm;
-      @media screen and (max-width: $breakpoint-xxl) {
-        font-size: $fz-xsm;
+      @include adaptiveValue(
+        "font-size",
+        $fz-sm,
+        $fz-xsm,
+        $containerWidth,
+        $br-maw-lg,
+        1
+      );
+
+      @media screen and (max-width: em($br-maw-md)) {
+        font-size: rem(22);
       }
-      @media screen and (max-width: $breakpoint-xl) {
-        font-size: 18px;
+
+      @media screen and (max-width: em($br-maw-xs)) {
+        @include adaptiveValue("font-size", $fz-sm, 18, $br-maw-xs, $br-maw-xxs);
       }
-      @media screen and (max-width: $breakpoint-md) {
-        font-size: $fz-sm;
+
+      @media screen and (max-width: em($br-maw-xxs)) {
+        font-size: rem($fz-xsm);
       }
     }
   }
+
   // .footer__logo
   &__logo {
     justify-self: center;
     align-self: center;
-    width: 287px;
+    @include adaptiveValue("width", 287, 144, $containerWidth, $br-miw-lg, 1);
+
     @media (any-hover: hover) {
       &:hover {
         path {
@@ -267,152 +341,148 @@
         }
       }
     }
-    @media screen and (max-width: $breakpoint-xxl) {
-      width: 203px;
-    }
-    @media screen and (max-width: $breakpoint-xl) {
-      width: 174px;
-    }
-    @media screen and (max-width: $breakpoint-lg) {
-      width: 144px;
-    }
-    @media screen and (max-width: $breakpoint-md) {
+
+    @media screen and (max-width: em($br-maw-md)) {
       justify-self: start;
+    }
+
+    @media screen and (max-width: em($br-maw-md)) {
+      padding-top: rem(3);
       align-self: start;
-      padding-right: 10px;
-      padding-top: 5px;
     }
-    @media screen and (max-width: $breakpoint-sm) {
-      
-    }
-    @media screen and (max-width: $breakpoint-xs) {
+
+    @media screen and (max-width: em($br-maw-xxs)) {
       justify-self: center;
       padding: 0;
     }
   }
+
   // .footer__subscribe
   &__subscribe {
     display: grid;
     justify-content: end;
-    padding-left: 10px;
+    padding-left: rem(10);
     position: relative;
-    @media screen and (max-width: $breakpoint-md) {
-      grid-column: 1 / span 2;
+
+    @media screen and (max-width: em($br-maw-sm)) {
+      grid-column: 1 / 3;
       justify-content: center;
+      padding-left: 0;
       order: -1;
     }
-    @media screen and (max-width: $breakpoint-xs) {
+
+    @media screen and (max-width: em($br-maw-xxs)) {
       grid-column: initial;
     }
+
     &::before {
       content: "";
       background-color: $color-secondary;
-      width: 1px;
-      height: calc(100% + 18px);
+      width: rem(1);
+      height: calc(100% + rem(18));
       position: absolute;
-      top: -9px;
+      top: rem(-9);
       left: 0;
-      @media screen and (max-width: $breakpoint-xxl) {
-        height: calc(100% + 14px);
-        top: -7px;
+
+      @media screen and (max-width: em($br-maw-xl)) {
+        height: calc(100% + rem(14));
+        top: rem(-7);
       }
-      @media screen and (max-width: $breakpoint-xl) {
-        height: calc(100% + 12px);
-        top: -6px;
-      }
-      @media screen and (max-width: $breakpoint-lg) {
-        height: calc(100% + 10px);
-        top: -5px;
-      }
-      @media screen and (max-width: $breakpoint-md) {
+
+      @media screen and (max-width: em($br-maw-lg)) {
         display: none;
       }
     }
   }
+
   // .footer__subscribe-container
   &__subscribe-container {
-    max-width: 347px;
-    @media screen and (max-width: $breakpoint-xxl) {
-      max-width: 330px;
-    }
-    @media screen and (max-width: $breakpoint-xl) {
-      max-width: 300px;
-    }
-    @media screen and (max-width: $breakpoint-md) {
-      max-width: none;
+    @include adaptiveValue("max-width", 347, 300, $containerWidth, $br-maw-md);
+
+    @media screen and (max-width: em($br-maw-md)) {
+      align-self: center;
     }
   }
   // .footer__subscribe-title
   &__subscribe-title {
     font-family: $ff-secondary;
-    font-size: $fz-lg;
+    @include adaptiveValue(
+      "font-size",
+      $fz-lg,
+      $fz-sm,
+      $containerWidth,
+      $br-maw-sm
+    );
     text-transform: capitalize;
-    @media screen and (max-width: $breakpoint-xxl) {
-      font-size: $fz-m;
-    }
-    @media screen and (max-width: $breakpoint-xl) {
-      font-size: $fz-sm;
-    }
-    @media screen and (max-width: $breakpoint-md) {
-      font-size: $fz-lg;
+
+    @media screen and (max-width: em($br-maw-sm)) {
+      @include adaptiveValue(
+        "font-size",
+        $fz-m,
+        $fz-sm,
+        $br-maw-sm,
+        $br-maw-xs,
+        1
+      );
       text-align: center;
     }
-    @media screen and (max-width: $breakpoint-sm) {
-      max-width: 450px;
+
+    @media screen and (max-width: em($br-maw-xs)) {
+      font-size: rem(34);
     }
+
+    @media screen and (max-width: em($br-maw-xxs)) {
+      @include adaptiveValue("font-size", $fz-m, $fz-sm, $br-maw-xxs, $br-maw-xxxs, 1);
+    }
+
     &:not(:last-child) {
-      margin-bottom: 15px;
-      @media screen and (max-width: $breakpoint-xxl) {
-        margin-bottom: 11px;
-      }
-      @media screen and (max-width: $breakpoint-xl) {
-        margin-bottom: 10px;
-      }
-      @media screen and (max-width: $breakpoint-lg) {
-        margin-bottom: 8px;
-      }
-      @media screen and (max-width: $breakpoint-md) {
-        margin-bottom: 10px;
-      }
-      @media screen and (max-width: $breakpoint-sm) {
-        margin-bottom: 5px;
-      }
+      @include adaptiveValue(
+        "margin-bottom",
+        15,
+        10,
+        $containerWidth,
+        $br-miw-lg,
+        1
+      );
     }
   }
   // .footer__subscribe-form
   &__subscribe-form {
     display: grid;
-    column-gap: 28px;
+    @include adaptiveValue(
+      "column-gap",
+      28,
+      14,
+      $containerWidth,
+      $br-miw-lg,
+      1
+    );
     grid-template-columns: 1fr auto;
     position: relative;
-    @media screen and (max-width: $breakpoint-xxl) {
-      column-gap: 21px;
-    }
-    @media screen and (max-width: $breakpoint-xl) {
-      column-gap: 17px;
-    }
-    @media screen and (max-width: $breakpoint-lg) {
-      column-gap: 14px;
-    }
-    @media screen and (max-width: $breakpoint-md) {
-      grid-template: auto;
-      margin: 0 auto;
+
+    @media screen and (max-width: em($br-maw-xs)) {
+      grid-template-columns: 1fr;
       max-width: 450px;
+      margin-inline: auto;
+      row-gap: rem(10);
     }
+
     &::after {
       content: "";
       background-color: $color-secondary;
       bottom: 0;
-      height: 1px;
+      height: rem(1);
       left: 0;
       opacity: 0.2;
       position: absolute;
-      width: calc(100% - 13px);
-      @media screen and (max-width: $breakpoint-md) {
-        max-width: 70%;
+      width: calc(100% - rem(13));
+
+      @media screen and (max-width: em($br-maw-md)) {
+        max-width: 75%;
       }
-      @media screen and (max-width: $breakpoint-xs) {
-        max-width: 65%;
+
+      @media screen and (max-width: em($br-maw-xs)) {
+        display: none;
       }
     }
   }
@@ -420,65 +490,84 @@
   &__subscribe-email {
     background-color: transparent;
     color: $color-secondary;
+    @include adaptiveValue(
+      "font-size",
+      $fz-xxsm,
+      13,
+      $containerWidth,
+      $br-maw-md
+    );
     outline: none;
-    @media screen and (max-width: $breakpoint-xl) {
-      max-width: 200px;
+
+    @media screen and (max-width: em($br-maw-md)) {
+      @include adaptiveValue("max-width", 385, 350, $br-maw-md, $br-maw-sm);
     }
+
+    @media screen and (max-width: em($br-maw-sm)) {
+      @include adaptiveValue("max-width", 440, 350, $br-maw-sm, $br-maw-xs);
+    }
+
+    @media screen and (max-width: em($br-maw-xs)) {
+      font-size: rem(18);
+    }
+
+    @media screen and (max-width: em($br-maw-xs)) {
+      padding: rem(10);
+    }
+
+    @media screen and (max-width: em($br-maw-xxxs)) {
+      font-size: rem($fz-xxsm);
+      padding-inline: 0;
+    }
+
     &::placeholder {
       color: $color-secondary;
       font-family: $ff-main;
-      font-size: $fz-xxsm;
+      @include adaptiveValue(
+        "font-size",
+        $fz-xxsm,
+        11,
+        $containerWidth,
+        $br-maw-md
+      );
       font-weight: $fw-regular;
-      line-height: calc(30 / 16);
-      @media screen and (max-width: $breakpoint-xxl) {
-        font-size: 15px;
-      }
-      @media screen and (max-width: $breakpoint-xl) {
-        font-size: 13px;
-      }
-      @media screen and (max-width: $breakpoint-lg) {
-        font-size: 11px;
-      }
-      @media screen and (max-width: $breakpoint-md) {
-        font-size: initial;
-      }
+      line-height: math.div(30, 16);
     }
   }
   // .footer__subscribe-button
   &__subscribe-button {
     display: inline-block;
-    line-height: calc(30 / 16);
-    padding: 11px 9px;
+    @include adaptiveValue(
+      "font-size",
+      $fz-xxsm,
+      11,
+      $containerWidth,
+      $br-maw-md
+    );
+    line-height: math.div(30, 16);
+    @include adaptiveValue("padding-block", 11, 6, $containerWidth, $br-maw-md);
+    @include adaptiveValue("padding-inline", 9, 5, $containerWidth, $br-maw-md);
     transition: color 0.4s, border 0.4s;
+
+    @media screen and (max-width: em($br-maw-md)) {
+      border: rem(1) solid hsla(39, 34%, 63%, 0.3);
+      padding: rem(8);
+    }
+
     @media (any-hover: hover) {
       &:hover {
         color: $color-white;
-        @media screen and (max-width: $breakpoint-md) {
-          border: 1px solid hsla(0, 0%, 100%, .6);
+
+        @media screen and (max-width: em($br-maw-md)) {
+          border: rem(1) solid hsla(0, 0%, 100%, 0.6);
         }
       }
     }
-    @media screen and (max-width: $breakpoint-xxl) {
-      font-size: 15px;
-      padding: 8px 7px;
-    }
-    @media screen and (max-width: $breakpoint-xl) {
-      font-size: 13px;
-      padding: 7px 6px;
-    }
-    @media screen and (max-width: $breakpoint-lg) {
-      font-size: 11px;
-      padding: 6px 5px;
-    }
-    @media screen and (max-width: $breakpoint-md) {
-      border: 1px solid hsla(39, 34%, 63%, .3);
-      font-size: initial;
-      padding: 10px 8px;
-    }
   }
+
   // .footer__copyright
   &__copyright {
-    line-height: calc(32 / 16);
+    line-height: math.div(32, 16);
     text-align: center;
   }
 }

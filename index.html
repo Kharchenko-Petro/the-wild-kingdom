@@ -13,28 +13,28 @@
           <nav class="header__menu nav-menu">
             <ul class="nav-menu__list">
               <li class="nav-menu__item">
-                <a href="#" class="nav-menu__link header-link hover">Home</a>
+                <a href="#" class="nav-menu__link header-link link-hover">Home</a>
               </li>
               <li class="nav-menu__item">
-                <a href="#" class="nav-menu__link header-link hover">About</a>
+                <a href="#" class="nav-menu__link header-link link-hover">About</a>
               </li>
               <li class="nav-menu__item">
-                <a href="#" class="nav-menu__link header-link hover"
+                <a href="#" class="nav-menu__link header-link link-hover"
                   >Products</a
                 >
               </li>
               <li class="nav-menu__item">
-                <a href="#" class="nav-menu__link header-link hover"
+                <a href="#" class="nav-menu__link header-link link-hover"
                   >Services</a
                 >
               </li>
             </ul>
 
             <div class="nav-menu__mobile-actions header-actions">
-              <a href="#" class="header-actions__login header-link hover"
+              <a href="#" class="header-actions__login header-link link-hover"
                 >Log in</a
               >
-              <a href="#" class="header-actions__register header-link hover"
+              <a href="#" class="header-actions__register header-link link-hover"
                 >Register</a
               >
               <button type="button" class="header-actions__button button">
@@ -111,8 +111,8 @@
           </div>
 
           <div class="header__desktop-actions header-actions">
-            <a href="#" class="header-actions__login header-link">Log in</a>
-            <a href="#" class="header-actions__register header-link"
+            <a href="#" class="header-actions__login header-link  link-hover">Log in</a>
+            <a href="#" class="header-actions__register header-link  link-hover"
               >Register</a
             >
             <button type="button" class="header-actions__button button">
@@ -127,11 +127,31 @@
       </header>
       <main class="page">
         <section class="page__hero hero">
-          <p class="sometext container">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut debitis enim officiis officia. Culpa, nulla, laboriosam ad aliquam adipisci eius omnis aut quisquam hic laudantium sed a doloremque quidem expedita.
-          Consequuntur in iste magni modi id ratione aliquid ea veniam, inventore neque molestias a maiores incidunt repellat alias! Officiis illum praesentium facilis aspernatur error repellendus? Voluptatum temporibus magnam aliquid ad!
-          Voluptatem, aut. Voluptas obcaecati reprehenderit earum illum quam tenetur iure nisi facere reiciendis omnis et nulla alias quae ullam corrupti, nam similique dolorum debitis aspernatur saepe aliquid! Rerum, error minus.</p>
+          <div class="hero__container container">
+            <h1 class="hero__title">A better world for pets</h1>
+            <a href="#" class="hero__button button">Explore</a>
+
+            <div class="hero__slider swiper">
+              <div class="hero__wrapper swiper-wrapper">
+                <div class="hero__slide hero-slide swiper-slide">
+                  <div class="hero-slide__body">
+                    <img
+                      src="./img/"
+                      alt="Dog image"
+                      class="hero-slide__item"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="hero__controll">
+                <button type="button" class="hero__arrow hero__arrow_left _icon-slider-arrow"></button>
+                <button type="button" class="hero__arrow hero__arrow_right _icon-slider-arrow"></button>
+              </div>
+            </div>
+          </div>
+          <img src="./img/hero/bg.jpg" alt="Hero background image" class="hero__background-image">
         </section>
-        <!-- <section class="page__about-us about-us">
+        <section class="page__about-us about-us">
           <div class="about-us__container container">
             <div class="about-us__content about-content">
               <div class="about-content__image section-image-frame">
@@ -184,7 +204,7 @@
               </div>
             </div>
           </div>
-        </section> -->
+        </section>
       </main>
       <footer class="footer">
         <div class="footer__container container">
@@ -194,16 +214,16 @@
                 <h5 class="footer__menu-title">Sitemap</h5>
                 <ul class="footer__menu-list">
                   <li class="footer__menu-item">
-                    <a href="" class="footer__menu-link hover">Home</a>
+                    <a href="" class="footer__menu-link link-hover">Home</a>
                   </li>
                   <li class="footer__menu-item">
-                    <a href="" class="footer__menu-link hover">About</a>
+                    <a href="" class="footer__menu-link link-hover">About</a>
                   </li>
                   <li class="footer__menu-item">
-                    <a href="" class="footer__menu-link hover">Products</a>
+                    <a href="" class="footer__menu-link link-hover">Products</a>
                   </li>
                   <li class="footer__menu-item">
-                    <a href="" class="footer__menu-link hover">Services</a>
+                    <a href="" class="footer__menu-link link-hover">Services</a>
                   </li>
                 </ul>
               </div>

@@ -13,40 +13,29 @@
 .section-label {
   color: $color-secondary-darker;
   font-family: $ff-secondary;
-  font-size: 48px;
+  font-size: rem($fz-xlg);
   text-transform: capitalize;
 }
 .button {
   display: inline-block;
   background: transparent;
   border: 1px solid $color-secondary;
-  border-radius: 50px;
+  border-radius: rem(50);
   color: $color-secondary;
   cursor: pointer;
   font-weight: $fw-light;
   line-height: 1.56;
-  padding: 10px 38px;
+  @include adaptiveValue("padding-block", 10, 5, $containerWidth, $br-maw-xs, 1);
+  @include adaptiveValue("padding-inline", 38, 26, $containerWidth, $br-maw-xs, 1);
   transition: all 0.4s;
   overflow: hidden;
-  @media screen and (max-width: $breakpoint-xxl) {
-    padding: 8px 32px;
-  }
-  @media screen and (max-width: $breakpoint-xl) {
-    padding: 7px 30px;
-  }
-  @media screen and (max-width: $breakpoint-lg) {
-    padding: 5px 26px;
-  }
-  @media screen and (max-width: $breakpoint-md) {
-    display: inline-block;
-  }
   @media (any-hover: hover) {
     &:hover {
       color: $color-white;
       background-color: $color-secondary;
     }
   }
-  &__gold {
+  &_gold {
     background: #bbb6a8 url(../img/button-bg.jpg) center no-repeat;
     background-blend-mode: soft-light;
     background-size: cover;
@@ -55,7 +44,7 @@
 .service-card {
   display: grid;
   justify-items: center;
-  row-gap: 29px;
+  row-gap: rem(29);
   &__icon {
     display: grid;
     align-items: center;
@@ -64,17 +53,17 @@
     background-blend-mode: soft-light;
     background-size: cover;
     border-radius: 50%;
-    height: 140px;
-    width: 140px;
+    height: rem(140);
+    width: rem(140);
     overflow: hidden;
   }
   &__label {
     font-family: $ff-secondary;
-    font-size: $fz-sm;
+    font-size: rem($fz-sm);
     text-transform: capitalize;
   }
 }
-.hover {
+.link-hover {
   position: relative;
   &::after {
     content: "";

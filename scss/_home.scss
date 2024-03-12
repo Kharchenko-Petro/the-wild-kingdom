@@ -1,37 +1,90 @@
-.sometext {
-  padding-block: 140px;
-  @media screen and (max-width: $breakpoint-xxl) {
-    padding-block: 120px;
-  }
-  @media screen and (max-width: $breakpoint-xl) {
-    padding-block: 100px;
-  }
-  @media screen and (max-width: $breakpoint-lg) {
-    padding-block: 80px;
-  }
-  @media screen and (max-width: $breakpoint-md) {
-    padding-block: 70px;
-  }
-  @media screen and (max-width: $breakpoint-sm) {
-    padding-block: 60px;
-  }
-}
 //===== PAGE ===========================================================================================================================================================================================================================================================================
 .page {
-  flex: 1 1 auto;
+  // .page__hero
+  &__hero {
+  }
+  // .page__about-us
+  &__about-us {
+  }
 }
-.page__hero {
-}
-.page__about-us {
-  background: $color-bg url("../img/about-us/about-us-bg-decor.jpg") 0 -533px no-repeat;
-  background-blend-mode: lighten;
-  background-size: contain;
-  padding-block: 190px 75px;
-}
-
+//===== HERO ===========================================================================================================================================================================================================================================================================
 .hero {
-
+  display: flex;
+  position: relative;
+  align-items: center;
+  min-height: 100vh;
+  // .hero__container
+  &__container {
+    position: relative;
+    flex-grow: 1;
+    padding-block: 150px 50px;
+    z-index: 5;
+  }
+  // .hero__title
+  &__title {
+    font-family: $ff-secondary;
+    @include adaptiveValue("font-size", $fz-xxlg, 42);
+    text-transform: capitalize;
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 35, 15);
+    }
+  }
+  // .hero__button
+  &__button {
+  }
+  // .hero__slider
+  &__slider {
+  }
+  // .hero__wrapper
+  &__wrapper {
+  }
+  // .hero__slide
+  &__slide {
+  }
+  // .hero__controll
+  &__controll {
+  }
+  // .hero__arrow
+  &__arrow {
+    // .hero__arrow_left
+    &_left {
+    }
+    // .hero__arrow_right
+    &_right {
+    }
+  }
+  // .hero__background-image
+  &__background-image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    object-position: top;
+  }
 }
+.container {
+}
+.button {
+}
+.swiper {
+}
+.swiper-wrapper {
+}
+.hero-slide {
+  // .hero-slide__body
+  &__body {
+  }
+  // .hero-slide__item
+  &__item {
+  }
+}
+.swiper-slide {
+}
+._icon-slider-arrow {
+}
+
 //===== ABOUT-US ===========================================================================================================================================================================================================================================================================
 .about-us {
   &__container {

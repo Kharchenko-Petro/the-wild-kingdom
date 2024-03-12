@@ -2,153 +2,157 @@
   border: none;
   outline: none;
   display: none;
-  @media screen and (max-width: $breakpoint-md) {
+
+  @media screen and (max-width: em($br-maw-md) ) {
     display: inline-block;
     cursor: pointer;
-    height: 18px;
+    height: rem(18);
     position: relative;
-    width: 30px;
+    width: rem(30);
+
     span,
     &::before,
     &::after {
       content: "";
       background-color: $color-secondary;
-      height: 2px;
+      height: rem(2);
       position: absolute;
       left: 0;
       transition: all 0.4s ease 0s;
       width: 100%;
     }
+
     &::before {
       top: 0;
     }
+
     &::after {
       bottom: 0;
     }
+
     span {
-      top: calc(50% - 1px);
+      top: calc(50% - rem(1));
     }
+
     .menu-open ~ & {
       span {
-        left: calc(50% - 1px);
+        left: calc(50% - rem(1));
         width: 0;
       }
+
       &::before {
-        top: calc(50% - 1px);
+        top: calc(50% - rem(1));
         transform: rotate(-45deg);
       }
+
       &::after {
-        bottom: calc(50% - 1px);
+        bottom: calc(50% - rem(1));
         transform: rotate(45deg);
       }
     }
   }
 }
+
 .header-actions {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 15px 50px;
+  row-gap: rem(15);
+  @include adaptiveValue("column-gap", 50, 25, $containerWidth, $br-maw-md);
   flex-wrap: wrap;
-  @media screen and (max-width: $breakpoint-xxl) {
-    column-gap: 37px;
-  }
-  @media screen and (max-width: $breakpoint-xl) {
-    column-gap: 32px;
-  }
-  @media screen and (max-width: $breakpoint-lg) {
-    column-gap: 20px;
-  }
-  @media screen and (max-width: $breakpoint-md) {
+
+  @media screen and (max-width: em($br-maw-md)) {
     flex-direction: column;
-    font-size: $fz-sm;
+    font-size: rem($fz-sm);
   }
+
   // .nav-actions__login
   &__login {
   }
+
   // .nav-actions__register
   &__register {
   }
+  
   // .nav-actions__button
   &__button {
   }
 }
+
 .header-link {
   color: $color-secondary;
   font-weight: $fw-light;
-  line-height: calc(25 / 18);
+  line-height: math.div(25, 18);
 }
+
 .nav-menu {
-  @media screen and (max-width: $breakpoint-md) {
+  @media screen and (max-width: em($br-maw-md)) {
     background-color: $color-primary;
     display: grid;
     grid-template-rows: 1fr auto;
-    row-gap: 30px;
+    row-gap: rem(30);
     height: 100%;
     width: 75%;
     right: -100%;
     overflow: auto;
-    padding: 70px 15px;
+    padding: rem(70) rem(15);
     position: fixed;
     top: 0;
     transition: right 0.4s;
+
     &.menu-open {
       right: 0;
     }
   }
-  @media screen and (max-width: $breakpoint-sm) {
+
+  @media screen and (max-width: em($br-maw-xs)) {
     width: 100%;
+
     &::after {
       content: "";
       background-color: $color-primary;
-      height: 60px;
+      height: rem(60);
       right: -100%;
       top: 0;
       position: fixed;
       transition: right 0.4s;
       width: 100%;
     }
+
     &.menu-open::after {
       right: 0;
     }
   }
+
   // .nav-menu__list
   &__list {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px 50px;
-    @media screen and (max-width: $breakpoint-xxl) {
-      column-gap: 37px;
-    }
-    @media screen and (max-width: $breakpoint-xl) {
-      column-gap: 32px;
-    }
-    @media screen and (max-width: $breakpoint-lg) {
-      column-gap: 20px;
-    }
-    @media screen and (max-width: $breakpoint-md) {
+    row-gap: rem(15);
+    @include adaptiveValue("column-gap", 50, 25, $containerWidth, $br-maw-md);
+
+    @media screen and (max-width: em($br-maw-md)) {
       display: block;
-      font-size: $fz-lg;
+      font-size: rem($fz-lg);
       text-align: center;
-    }
-    @media screen and (max-width: $breakpoint-xs) {
-      font-size: $fz-lg;
     }
   }
   // .nav-menu__item
   &__item {
-    @media screen and (max-width: $breakpoint-md) {
+    @media screen and (max-width: em($br-maw-md)) {
       &:not(:last-child) {
-        margin-bottom: 15px;
+        margin-bottom: rem(15);
       }
     }
   }
+
   // .nav-menu__link
   &__link {
   }
+
   &__mobile-actions {
     display: none;
-    @media screen and (max-width: $breakpoint-md) {
+    @media screen and (max-width: em($br-maw-md)) {
       display: flex;
     }
   }
@@ -159,6 +163,7 @@
   top: 0;
   width: 100%;
   z-index: 100;
+
   &.blur-header::after {
     content: '';
     position: absolute;
@@ -167,104 +172,68 @@
     top: 0;
     width: 1000%;
     background-color: hsla(60, 3%, 13%, .65);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(rem(16));
+    -webkit-backdrop-filter: blur(rem(16));
     z-index: -1;
   }
+
   // .header__container
   &__container {
     display: grid;
     align-items: center;
-    column-gap: 15px;
+    column-gap: rem(15);
     grid-template-columns: 1fr auto 1fr;
-    min-height: 152px;
-    padding-block: 10px;
-    @media screen and (max-width: $breakpoint-xxl) {
-      min-height: 111px;
-    }
-    @media screen and (max-width: $breakpoint-xl) {
-      min-height: 92px;
-    }
-    @media screen and (max-width: $breakpoint-lg) {
-      min-height: 76px;
-      column-gap: 10px;
-    }
-    @media screen and (max-width: $breakpoint-md) {
+    @include adaptiveValue("min-height", 152, 40);
+    padding-block: rem(10);
+
+    @media screen and (max-width: em($br-maw-md)) {
       grid-template-columns: 1fr;
-      min-height: 70px;
-    }
-    @media screen and (max-width: $breakpoint-sm) {
-      min-height: 60px;
     }
   }
+
   // .header__menu
   &__menu {
   }
+
   // .header__logo
   &__logo {
-    @media screen and (max-width: $breakpoint-md) {
-      justify-self: center;
-    }
-    @media screen and (max-width: $breakpoint-sm) {
-      justify-self: left;
-    }
-  }
-  // .header__actions
-  &__desktop-actions {
-    @media screen and (max-width: $breakpoint-md) {
-      display: none;
-    }
-  }
-  // .header__icon
-  &__icon {
-    @media screen and (max-width: $breakpoint-md) {
-      position: absolute;
-      right: 20px;
-      top: 26px;
-      z-index: 5;
-    }
-    @media screen and (max-width: $breakpoint-sm) {
-      top: 21px;
-    }
-  }
-}
-.logo {
-  svg {
-    vertical-align: bottom;
-    width: 217px;
-    @media (any-hover: hover) {
-      &:hover {
-        path {
-          transition: fill 0.4s;
-          fill: $color-secondary-darker;
+    svg {
+      vertical-align: bottom;
+      @include adaptiveValue("width", 217, 80);
+
+      @media (any-hover: hover) {
+        &:hover {
+          path {
+            transition: fill 0.4s;
+            fill: $color-secondary-darker;
+          }
         }
       }
     }
-  }
-  @media screen and (max-width: $breakpoint-xxl) {
-    svg {
-      width: 159px;
+
+    @media screen and (max-width: em($br-maw-md)) {
+      justify-self: center;
+    }
+
+    @media screen and (max-width: em($br-maw-xs)) {
+      justify-self: left;
+      z-index: 5;
     }
   }
-  @media screen and (max-width: $breakpoint-xl) {
-    svg {
-      width: 136px;
+  
+  // .header__actions
+  &__desktop-actions {
+    @media screen and (max-width: em($br-maw-md)) {
+      display: none;
     }
   }
-  @media screen and (max-width: $breakpoint-lg) {
-    svg {
-      width: 115px;
-    }
-  }
-  @media screen and (max-width: $breakpoint-md) {
-    svg {
-      width: 110px;
-    }
-  }
-  @media screen and (max-width: $breakpoint-sm) {
-    z-index: 5;
-    svg {
-      width: 80px;
+
+  // .header__icon
+  &__icon {
+    @media screen and (max-width: em($br-maw-md)) {
+      position: absolute;
+      right: rem(20);
+      z-index: 5;
     }
   }
 }

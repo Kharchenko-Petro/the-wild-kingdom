@@ -1,5 +1,6 @@
 "use strict";
 
+// import 'swiper' from './sliders';
 // import './dynamic_adapt.js';
 
 const menuIcon = document.querySelector(".menu-icon");
