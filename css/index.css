@@ -190,7 +190,7 @@ body {
 .section-image-frame::before {
   content: "";
   position: absolute;
-  border: 1px solid #9d875c;
+  border: 0.0625rem solid #9d875c;
 }
 
 .section-title {
@@ -208,7 +208,7 @@ body {
 .button {
   display: inline-block;
   background: transparent;
-  border: 1px solid #c1ab81;
+  border: 0.0625rem solid #c1ab81;
   border-radius: 3.125rem;
   color: #c1ab81;
   cursor: pointer;
@@ -217,24 +217,24 @@ body {
   transition: all 0.4s;
   overflow: hidden;
 }
-@supports (padding-block: clamp( 0.3125rem , 0.1442846863rem  +  0.4672809854vw , 0.625rem )) {
+@supports (padding-block: clamp( 0.3125rem , 0.1442757009rem  +  0.4672897196vw , 0.625rem )) {
   .button {
-    padding-block: clamp( 0.3125rem , 0.1442846863rem  +  0.4672809854vw , 0.625rem );
+    padding-block: clamp( 0.3125rem , 0.1442757009rem  +  0.4672897196vw , 0.625rem );
   }
 }
-@supports not (padding-block: clamp( 0.3125rem , 0.1442846863rem  +  0.4672809854vw , 0.625rem )) {
+@supports not (padding-block: clamp( 0.3125rem , 0.1442757009rem  +  0.4672897196vw , 0.625rem )) {
   .button {
-    padding-block: calc(0.3125rem + 0.3125 * (100vw - 35.99875rem) / 66.87625);
+    padding-block: calc(0.3125rem + 0.3125 * (100vw - 36rem) / 66.875);
   }
 }
-@supports (padding-inline: clamp( 1.625rem , 1.221283247rem  +  1.121474365vw , 2.375rem )) {
+@supports (padding-inline: clamp( 1.625rem , 1.2212616822rem  +  1.1214953271vw , 2.375rem )) {
   .button {
-    padding-inline: clamp( 1.625rem , 1.221283247rem  +  1.121474365vw , 2.375rem );
+    padding-inline: clamp( 1.625rem , 1.2212616822rem  +  1.1214953271vw , 2.375rem );
   }
 }
-@supports not (padding-inline: clamp( 1.625rem , 1.221283247rem  +  1.121474365vw , 2.375rem )) {
+@supports not (padding-inline: clamp( 1.625rem , 1.2212616822rem  +  1.1214953271vw , 2.375rem )) {
   .button {
-    padding-inline: calc(1.625rem + 0.75 * (100vw - 35.99875rem) / 66.87625);
+    padding-inline: calc(1.625rem + 0.75 * (100vw - 36rem) / 66.875);
   }
 }
 @media (any-hover: hover) {
@@ -244,9 +244,8 @@ body {
   }
 }
 .button_gold {
-  background: #bbb6a8 url(../img/button-bg.jpg) center no-repeat;
+  background: #bbb6a8 url(../img/button-bg.jpg) center cover no-repeat;
   background-blend-mode: soft-light;
-  background-size: cover;
 }
 
 .service-card {
@@ -258,9 +257,8 @@ body {
   display: grid;
   align-items: center;
   justify-content: center;
-  background: #bbb6a8 url(../img/button-bg.jpg) center no-repeat;
+  background: #bbb6a8 url(../img/button-bg.jpg) center cover no-repeat;
   background-blend-mode: soft-light;
-  background-size: cover;
   border-radius: 50%;
   height: 8.75rem;
   width: 8.75rem;
@@ -279,9 +277,9 @@ body {
   content: "";
   background-color: #c1ab81;
   position: absolute;
-  height: 1px;
+  height: 0.0625rem;
   left: 0;
-  bottom: -1px;
+  bottom: -0.0625rem;
   width: 0;
   transition: all 0.4s;
 }
@@ -1348,12 +1346,18 @@ body {
   min-height: 100vh;
 }
 .hero__container {
+  display: flex;
+  align-items: center;
   position: relative;
   flex-grow: 1;
-  padding-block: 150px 50px;
+  padding-block: 9.375rem 3.125rem;
   z-index: 5;
 }
+.hero__content {
+  max-width: 40.625rem;
+}
 .hero__title {
+  color: #c1ab81;
   font-family: "Italiana", cursive;
   text-transform: capitalize;
 }
@@ -1376,6 +1380,46 @@ body {
   .hero__title:not(:last-child) {
     margin-bottom: calc(0.9375rem + 1.25 * (100vw - 17.5rem) / 85.375);
   }
+}
+.hero__slider {
+  justify-self: center;
+}
+.hero__slider-wrapper {
+  max-width: 650px;
+}
+.hero__slider-item {
+  height: 720px;
+}
+.hero__slider-img-outer-wrapper {
+  border-radius: 50%;
+  width: 650px;
+  margin-inline: auto;
+  height: 650px;
+  position: relative;
+  transform-origin: top;
+  transform: scale(1.1);
+}
+.hero__slider-img-outer-wrapper::before {
+  content: "";
+  background-color: #000;
+  border-radius: 50%;
+  position: absolute;
+  height: 90%;
+  width: 90%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.hero__slider-img-inner-wrapper {
+  height: 100%;
+}
+.hero__slider-img {
+  display: block;
+  margin-inline: auto;
+  height: 100%;
+  width: initial;
+  position: relative;
+  z-index: 5;
 }
 .hero__background-image {
   position: absolute;

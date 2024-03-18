@@ -1,80 +1,92 @@
 .section-image-frame {
   position: relative;
+
   &::before {
     content: "";
     position: absolute;
-    border: 1px solid $color-secondary-darker;
+    border: rem(1) solid $color-secondary-darker;
   }
 }
+
 .section-title {
   line-height: 1.56;
   text-transform: capitalize;
 }
+
 .section-label {
   color: $color-secondary-darker;
   font-family: $ff-secondary;
   font-size: rem($fz-xlg);
   text-transform: capitalize;
 }
+
 .button {
   display: inline-block;
   background: transparent;
-  border: 1px solid $color-secondary;
+  border: rem(1) solid $color-secondary;
   border-radius: rem(50);
   color: $color-secondary;
   cursor: pointer;
   font-weight: $fw-light;
   line-height: 1.56;
-  @include adaptiveValue("padding-block", 10, 5, $containerWidth, $br-maw-xs, 1);
-  @include adaptiveValue("padding-inline", 38, 26, $containerWidth, $br-maw-xs, 1);
+  @include adaptiveValue("padding-block", 10, 5, $containerWidth, $br-miw-sm, 1);
+  @include adaptiveValue("padding-inline", 38, 26, $containerWidth, $br-miw-sm, 1);
   transition: all 0.4s;
   overflow: hidden;
+
   @media (any-hover: hover) {
     &:hover {
       color: $color-white;
       background-color: $color-secondary;
     }
   }
+
   &_gold {
-    background: #bbb6a8 url(../img/button-bg.jpg) center no-repeat;
+    background: #bbb6a8 url(../img/button-bg.jpg) center cover no-repeat;
     background-blend-mode: soft-light;
-    background-size: cover;
+    // background-size: cover;
   }
 }
+
 .service-card {
   display: grid;
   justify-items: center;
   row-gap: rem(29);
+
   &__icon {
     display: grid;
     align-items: center;
     justify-content: center;
-    background: #bbb6a8 url(../img/button-bg.jpg) center no-repeat;
+    background: #bbb6a8 url(../img/button-bg.jpg) center cover no-repeat;
     background-blend-mode: soft-light;
-    background-size: cover;
+    // background-size: cover;
     border-radius: 50%;
     height: rem(140);
     width: rem(140);
     overflow: hidden;
   }
+
   &__label {
     font-family: $ff-secondary;
     font-size: rem($fz-sm);
     text-transform: capitalize;
   }
 }
+
 .link-hover {
   position: relative;
+
   &::after {
     content: "";
     background-color: $color-secondary;
     position: absolute;
-    height: 1px;
+    height: rem(1);
     left: 0;
-    bottom: -1px;
+    bottom: rem(-1);
     width: 0;
     transition: all 0.4s;
   }
+  
   @media (any-hover: hover) {
     &:hover {
       &::after {
