@@ -44,7 +44,7 @@
                 class="header-actions__register header-link link-hover"
                 >Register</a
               >
-              <button type="button" class="header-actions__button button">
+              <button type="button" class="header-actions__button-contact button">
                 Contact
               </button>
             </div>
@@ -124,7 +124,7 @@
             <a href="#" class="header-actions__register header-link link-hover"
               >Register</a
             >
-            <button type="button" class="header-actions__button button">
+            <button type="button" class="header-actions__button-contact button">
               Contact
             </button>
           </div>
@@ -155,7 +155,7 @@
                       />
                     </div>
                   </div>
-                </div>     
+                </div>
 
                 <div class="hero__slider-item swiper-slide">
                   <div class="hero__slider-img-outer-wrapper">
@@ -167,7 +167,7 @@
                       />
                     </div>
                   </div>
-                </div>     
+                </div>
 
                 <div class="hero__slider-item swiper-slide">
                   <div class="hero__slider-img-outer-wrapper">
@@ -179,7 +179,7 @@
                       />
                     </div>
                   </div>
-                </div>      
+                </div>
 
                 <div class="hero__slider-item swiper-slide">
                   <div class="hero__slider-img-outer-wrapper">
@@ -191,7 +191,7 @@
                       />
                     </div>
                   </div>
-                </div>              
+                </div>
               </div>
             </div>
           </div>
@@ -203,64 +203,319 @@
           />
         </section>
 
-        <section class="slider swiper">
-          
-        </section>
-
-        <!-- <section class="page__about-us about-us">
+        <section class="page__about-us about-us">
           <div class="about-us__container container">
-            <div class="about-us__content about-content">
-              <div class="about-content__image section-image-frame">
+            <div class="about-us__content">
+              <div class="about-us__content-image section-image-frame">
                 <img
                   src="./img/about-us/dog-sitting-chair.jpg"
-                  alt="Dog on chair"
+                  alt="Dog sitting on chair"
                 />
               </div>
 
-              <div class="about-content__info">
-                <h2 class="about-content__title section-title">About Us</h2>
-                <div class="about-content__label section-label">
+              <div class="about-us__content-info">
+                <h2 class="about-us__content-title section-title">About Us</h2>
+                <div class="about-us__content-label section-label">
                   Treating pet like Royalty
                 </div>
-                <blockquote class="about-content__quote">
+                <blockquote class="about-us__content-quote">
                   “They’re not just pets, they’re family”
                 </blockquote>
-                <div class="about-content__description">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-                  aliquam mi id augue ultrices, in tempus elit tristique.
-                  Aliquam ultrices sem non.
+                <div class="about-us__content-description">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Cras aliquam mi id augue ultrices, in tempus elit tristique.
+                    Aliquam ultrices sem non.
+                  </p>
                 </div>
-                <a href="#" class="about-content__button button">Explore</a>
+                <a href="#" class="about-us__content-button button button_gold"
+                  >Explore</a
+                >
               </div>
             </div>
 
-            <div class="about-us__services about-services">
-              <div class="about-services__item service-card">
-                <div class="service-card__icon">
+            <div class="about-us__services">
+              <div class="about-us__services-item">
+                <div class="about-us__services-icon service-icon">
                   <img src="./img/services/pet-food.svg" alt="Pet food icon" />
                 </div>
-                <h3 class="service-card__label">Pet Food</h3>
+                <h3 class="about-us__services-label">Pet Food</h3>
               </div>
 
-              <div class="about-services__item service-card">
-                <div class="service-card__icon">
+              <div class="about-us__services-item">
+                <div class="about-us__services-icon service-icon">
                   <img src="./img/services/pet-care.svg" alt="Pet food icon" />
                 </div>
-                <h3 class="service-card__label">Pet Care</h3>
+                <h3 class="about-us__services-label">Pet Care</h3>
               </div>
 
-              <div class="about-services__item service-card">
-                <div class="service-card__icon">
+              <div class="about-us__services-item">
+                <div class="about-us__services-icon service-icon">
                   <img
                     src="./img/services/pet-accessories.svg"
                     alt="Pet food icon"
                   />
                 </div>
-                <h3 class="service-card__label">Pet Accessories</h3>
+                <h3 class="about-us__services-label">Pet Accessories</h3>
               </div>
             </div>
           </div>
-        </section> -->
+        </section>
+
+        <section class="page__products products">
+          <div class="products__container container">
+            <div class="products__header">
+              <h2 class="products__header-title section-title">Our Products</h2>
+
+              <div class="products__header-label section-label">
+                For all your pet needs
+              </div>
+
+              <div class="products__header-description">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+                  aliquam mi id augue ultrices, in tempus elit.
+                </p>
+              </div>
+            </div>
+
+            <div class="products__items">
+              <article class="products__item">
+                <div class="products__item-header">
+                  <div class="products__item-image-container">
+                    <img
+                      src="./img/products/product_01.png"
+                      alt="Product picture"
+                    />
+                  </div>
+
+                  <button class="products__item-add-to-cart-button button button_gold" type="button">Add to cart</button>
+                </div>
+
+                <div class="products__item-info">
+                  <h3 class="products__item-title">
+                    <a href="#" class="products__item-link link-hover link-hover_color-primary">Luxury pet bed</a>
+                  </h3>
+
+                  <div class="products__item-price">$120</div>
+                </div>
+
+                <div class="products__item-rating">
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-line"></i>
+                </div>
+              </article>
+                      
+              <article class="products__item">
+                <div class="products__item-header">
+                  <div class="products__item-image-container">
+                    <img
+                      src="./img/products/product_02.png"
+                      alt="Product picture"
+                    />
+                  </div>
+
+                  <button class="products__item-add-to-cart-button button button_gold" type="button">Add to cart</button>
+                </div>
+
+                <div class="products__item-info">
+                  <h3 class="products__item-title">
+                    <a href="#" class="products__item-link  link-hover link-hover_color-primary">Cat Food</a>
+                  </h3>
+
+                  <div class="products__item-price">$20</div>
+                </div>
+
+                <div class="products__item-rating">
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-line"></i>
+                </div>
+              </article>
+
+              <article class="products__item">
+                <div class="products__item-header">
+                  <div class="products__item-image-container">
+                    <img
+                      src="./img/products/product_03.png"
+                      alt="Product picture"
+                    />
+                  </div>
+
+                  <button class="products__item-add-to-cart-button button button_gold" type="button">Add to cart</button>
+                </div>
+
+                <div class="products__item-info">
+                  <h3 class="products__item-title">
+                    <a href="#" class="products__item-link  link-hover link-hover_color-primary">Dog Food</a>
+                  </h3>
+
+                  <div class="products__item-price">$30</div>
+                </div>
+
+                <div class="products__item-rating">
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-line"></i>
+                </div>
+              </article>
+
+              <article class="products__item">
+                <div class="products__item-header">
+                  <div class="products__item-image-container">
+                    <img
+                      src="./img/products/product_04.png"
+                      alt="Product picture"
+                    />
+                  </div>
+
+                  <button class="products__item-add-to-cart-button button button_gold" type="button">Add to cart</button>
+                </div>
+
+                <div class="products__item-info">
+                  <h3 class="products__item-title">
+                    <a href="#" class="products__item-link  link-hover link-hover_color-primary">Treat for dog</a>
+                  </h3>
+
+                  <div class="products__item-price">$60</div>
+                </div>
+
+                <div class="products__item-rating">
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-line"></i>
+                </div>
+              </article>
+              <article class="products__item">
+                <div class="products__item-header">
+                  <div class="products__item-image-container">
+                    <img
+                      src="./img/products/product_01.png"
+                      alt="Product picture"
+                    />
+                  </div>
+
+                  <button class="products__item-add-to-cart-button button button_gold" type="button">Add to cart</button>
+                </div>
+
+                <div class="products__item-info">
+                  <h3 class="products__item-title">
+                    <a href="#" class="products__item-link  link-hover link-hover_color-primary">Luxury pet bed</a>
+                  </h3>
+
+                  <div class="products__item-price">$120</div>
+                </div>
+
+                <div class="products__item-rating">
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-line"></i>
+                </div>
+              </article>
+                      
+              <article class="products__item">
+                <div class="products__item-header">
+                  <div class="products__item-image-container">
+                    <img
+                      src="./img/products/product_02.png"
+                      alt="Product picture"
+                    />
+                  </div>
+
+                  <button class="products__item-add-to-cart-button button button_gold" type="button">Add to cart</button>
+                </div>
+
+                <div class="products__item-info">
+                  <h3 class="products__item-title">
+                    <a href="#" class="products__item-link  link-hover link-hover_color-primary">Cat Food</a>
+                  </h3>
+
+                  <div class="products__item-price">$20</div>
+                </div>
+
+                <div class="products__item-rating">
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-line"></i>
+                </div>
+              </article>
+
+              <article class="products__item">
+                <div class="products__item-header">
+                  <div class="products__item-image-container">
+                    <img
+                      src="./img/products/product_03.png"
+                      alt="Product picture"
+                    />
+                  </div>
+
+                  <button class="products__item-add-to-cart-button button button_gold" type="button">Add to cart</button>
+                </div>
+
+                <div class="products__item-info">
+                  <h3 class="products__item-title">
+                    <a href="#" class="products__item-link  link-hover link-hover_color-primary">Dog Food</a>
+                  </h3>
+
+                  <div class="products__item-price">$30</div>
+                </div>
+
+                <div class="products__item-rating">
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-line"></i>
+                </div>
+              </article>
+
+              <article class="products__item">
+                <div class="products__item-header">
+                  <div class="products__item-image-container">
+                    <img
+                      src="./img/products/product_04.png"
+                      alt="Product picture"
+                    />
+                  </div>
+
+                  <button class="products__item-add-to-cart-button button button_gold" type="button">Add to cart</button>
+                </div>
+
+                <div class="products__item-info">
+                  <h3 class="products__item-title">
+                    <a href="#" class="products__item-link  link-hover link-hover_color-primary">Treat for dog</a>
+                  </h3>
+
+                  <div class="products__item-price">$60</div>
+                </div>
+
+                <div class="products__item-rating">
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-fill"></i>
+                  <i class="icon-star-line"></i>
+                </div>
+              </article>
+            </div>            
+
+            <a href="#" class="products__button button button_gold">Explore</a>
+          </div>
+
+        </section>
       </main>
 
       <footer class="footer">

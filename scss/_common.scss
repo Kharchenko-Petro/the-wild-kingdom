@@ -1,25 +1,3 @@
-.section-image-frame {
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    border: rem(1) solid $color-secondary-darker;
-  }
-}
-
-.section-title {
-  line-height: 1.56;
-  text-transform: capitalize;
-}
-
-.section-label {
-  color: $color-secondary-darker;
-  font-family: $ff-secondary;
-  font-size: rem($fz-xlg);
-  text-transform: capitalize;
-}
-
 .button {
   display: inline-block;
   background: transparent;
@@ -29,47 +7,39 @@
   cursor: pointer;
   font-weight: $fw-light;
   line-height: 1.56;
-  @include adaptiveValue("padding-block", 10, 5, $containerWidth, $br-miw-sm, 1);
-  @include adaptiveValue("padding-inline", 38, 26, $containerWidth, $br-miw-sm, 1);
+  @include adaptiveValue(
+    "padding-block",
+    10,
+    5,
+    $containerWidth,
+    $br-maw-sm
+  );
+  @include adaptiveValue(
+    "padding-inline",
+    38,
+    26,
+    $containerWidth,
+    $br-maw-sm
+  );
   transition: all 0.4s;
   overflow: hidden;
 
   @media (any-hover: hover) {
     &:hover {
-      color: $color-white;
+      color: $color-primary;
       background-color: $color-secondary;
     }
   }
 
+  @media screen and (max-width: em($br-maw-sm)) {
+    padding: rem(10) rem(38);
+  }
+
   &_gold {
-    background: #bbb6a8 url(../img/button-bg.jpg) center cover no-repeat;
+    border-color: transparent;
+    background: #bbb6a8 url(../img/button-bg.jpg) center / cover no-repeat;
     background-blend-mode: soft-light;
-    // background-size: cover;
-  }
-}
-
-.service-card {
-  display: grid;
-  justify-items: center;
-  row-gap: rem(29);
-
-  &__icon {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    background: #bbb6a8 url(../img/button-bg.jpg) center cover no-repeat;
-    background-blend-mode: soft-light;
-    // background-size: cover;
-    border-radius: 50%;
-    height: rem(140);
-    width: rem(140);
-    overflow: hidden;
-  }
-
-  &__label {
-    font-family: $ff-secondary;
-    font-size: rem($fz-sm);
-    text-transform: capitalize;
+    color: $color-primary;
   }
 }
 
@@ -86,12 +56,68 @@
     width: 0;
     transition: all 0.4s;
   }
-  
+
+  &_color-primary::after {
+    background-color: $color-primary;
+  }
+
   @media (any-hover: hover) {
     &:hover {
       &::after {
         width: 35%;
       }
     }
+  }
+}
+
+.section-image-frame {
+  border: rem(1) solid $color-secondary-darker;
+  @include adaptiveValue("margin-left", -19, -13, $containerWidth, $br-maw-lg);
+  @include adaptiveValue("padding", 19, 2);
+}
+
+.section-title {
+  line-height: 1.56;
+  text-transform: capitalize;
+}
+
+.section-label {
+  color: $color-secondary-darker;
+  font-family: $ff-secondary;
+  @include adaptiveValue("font-size", $fz-xlg, $fz-m);
+  text-transform: capitalize;
+}
+
+.service-icon {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  background: #bbb6a8 url(../img/button-bg.jpg) center / cover no-repeat;
+  background-blend-mode: soft-light;
+  border-radius: 50%;
+  @include adaptiveValue("height", 140, 80, $containerWidth, $br-maw-sm, 1);
+  @include adaptiveValue("width", 140, 80, $containerWidth, $br-maw-sm, 1);
+  height: rem(140);
+  width: rem(140);
+  padding: rem(20);
+  overflow: hidden;
+
+  @media screen and (max-width: em($br-maw-sm)) {
+    height: rem(80);
+    width: rem(80);
+  }
+
+  @media screen and (max-width: em($br-maw-xxs)) {
+    height: rem(140);
+    width: rem(140);
+  }
+
+  @media screen and (max-width: em($br-maw-xxxs)) {
+    height: rem(120);
+    width: rem(120);
+  }
+
+  img {
+    max-width: 100%;
   }
 }

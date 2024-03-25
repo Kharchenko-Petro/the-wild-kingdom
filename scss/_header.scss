@@ -75,7 +75,7 @@
   }
   
   // .nav-actions__button
-  &__button {
+  &__button-contact{
   }
 }
 
@@ -164,7 +164,7 @@
   width: 100%;
   z-index: 100;
 
-  &.blur-header::after {
+  &.header-scrolled::after {
     content: '';
     position: absolute;
     height: 100%;
@@ -183,11 +183,16 @@
     align-items: center;
     column-gap: rem(15);
     grid-template-columns: 1fr auto 1fr;
-    @include adaptiveValue("min-height", 152, 40);
+    @include adaptiveValue("min-height", 132, 35);
     padding-block: rem(10);
+    transition: min-height .6s;
 
     @media screen and (max-width: em($br-maw-md)) {
       grid-template-columns: 1fr;
+    }
+
+    .header-scrolled & {
+      @include adaptiveValue("min-height", 80, 35);
     }
   }
 
@@ -200,7 +205,8 @@
     svg {
       vertical-align: bottom;
       @include adaptiveValue("width", 217, 80);
-
+      transition: width .6s;
+      
       @media (any-hover: hover) {
         &:hover {
           path {
@@ -208,6 +214,10 @@
             fill: $color-secondary-darker;
           }
         }
+      }
+
+      .header-scrolled & {
+        @include adaptiveValue("width", 180, 80);
       }
     }
 
@@ -234,6 +244,10 @@
       position: absolute;
       right: rem(20);
       z-index: 5;
+    }
+
+    @media screen and (max-width: em($br-maw-xs)) {
+      right: rem(8);
     }
   }
 }

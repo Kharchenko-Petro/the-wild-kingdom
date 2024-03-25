@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
 }
+
 a {
 	color: inherit;
   &:link,
@@ -14,11 +15,13 @@ a {
     text-decoration: none;
   }
 }
+
 html,
 body {
 	height: 100%;
 	min-width: $minWidth + px;
 }
+
 body {
   line-height: 1;
   //text-rendering: optimizeLegibility;
@@ -28,17 +31,20 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+
 button,
 input,
 textarea {
   font-family: $ff-main;
   font-size: inherit;
 }
+
 button {
   background-color: inherit;
   color: inherit;
   cursor: pointer;
 }
+
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -47,6 +53,7 @@ textarea {
 	-moz-appearance: none;
 	appearance: none;
 }
+
 h1,
 h2,
 h3,
@@ -56,10 +63,12 @@ h6 {
 	font-weight: inherit;
 	font-size: inherit;
 }
+
 img {
   vertical-align: top;
-  width: 100%;
+  // width: 100%;
 }
+
 li {
   list-style: none;
 }

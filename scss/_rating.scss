@@ -1,0 +1,59 @@
+.product-rating {
+  display: flex;
+  align-items: flex-end;
+  font-size: rem(40);
+  line-height: 0.75;
+  transition: opacity .4s ease 0s;
+}
+
+.product-rating.product-rating_sending {
+  opacity: .2;
+}
+
+.product-rating_set .product-rating__active,
+.product-rating_set .product-rating__item {
+  cursor: pointer;
+}
+
+.product-rating__body {
+  position: relative;
+}
+
+.product-rating__body::before {
+  content: "★★★★★";
+  display: block;
+}
+
+.product-rating__active {
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.product-rating__active::before {
+  content: "★★★★★";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  color: #ffd300;
+}
+
+.product-rating__items {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.product-rating__item {
+  flex: 0 0 20%;
+  height: 100%;
+  opacity: 0;
+}

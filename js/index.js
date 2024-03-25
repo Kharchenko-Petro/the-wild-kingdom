@@ -4,8 +4,8 @@ const header = document.querySelector(".header");
 
 menuIcon.addEventListener("click", () => {
   navMenu.classList.toggle("menu-open");
-  // if (header.classList.contains('blur-header')) {
-  //   header.classList.remove('blur-header');
+  // if (header.classList.contains('header-scrolled')) {
+  //   header.classList.remove('header-scrolled');
   // }
 });
 
@@ -22,23 +22,23 @@ navLinks.forEach((navLink) => {
 });
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-window.addEventListener('scroll', blurHeader);
+window.addEventListener("scroll", blurHeader);
 
 function blurHeader() {
   const header = document.querySelector(".header");
   this.scrollY >= 10
-    ? header.classList.add("blur-header")
-    : header.classList.remove("blur-header");
+    ? header.classList.add("header-scrolled")
+    : header.classList.remove("header-scrolled");
 }
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-window.addEventListener('load', function (e) {
+window.addEventListener("load", function (e) {
   initSliders();
-})
+});
 
 function initSliders() {
-  if (document.querySelector('.hero__slider')) {
-    new Swiper('.hero__slider', {
+  if (document.querySelector(".hero__slider")) {
+    new Swiper(".hero__slider", {
       // autoplay: true,
       centeredSlides: true,
       // slidesPerGroupAuto: true,
@@ -48,10 +48,10 @@ function initSliders() {
       //   prevEl: '.hero__arrow_right',
       // },
       // observer: true,
-			// observeParents: true,
-      slidesPerView: 'auto',
+      // observeParents: true,
+      slidesPerView: "auto",
       // spaceBetween: 32,
-      speed: 800, 
+      speed: 800,
     });
   }
 }

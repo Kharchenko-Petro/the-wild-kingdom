@@ -462,7 +462,7 @@
 
     @media screen and (max-width: em($br-maw-xs)) {
       grid-template-columns: 1fr;
-      max-width: 450px;
+      max-width: rem(450);
       margin-inline: auto;
       row-gap: rem(10);
     }
@@ -547,7 +547,7 @@
     line-height: math.div(30, 16);
     @include adaptiveValue("padding-block", 11, 6, $containerWidth, $br-maw-md);
     @include adaptiveValue("padding-inline", 9, 5, $containerWidth, $br-maw-md);
-    transition: color 0.4s, border 0.4s;
+    transition: color 0.4s, border 0.4s, background-color .4s;
 
     @media screen and (max-width: em($br-maw-md)) {
       border: rem(1) solid hsla(39, 34%, 63%, 0.3);
@@ -559,7 +559,8 @@
         color: $color-white;
 
         @media screen and (max-width: em($br-maw-md)) {
-          border: rem(1) solid hsla(0, 0%, 100%, 0.6);
+          background-color: $color-secondary;
+          color: $color-primary;
         }
       }
     }
