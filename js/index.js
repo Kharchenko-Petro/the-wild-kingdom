@@ -39,7 +39,9 @@ window.addEventListener("load", function (e) {
 function initSliders() {
   if (document.querySelector(".hero__slider")) {
     new Swiper(".hero__slider", {
-      // autoplay: true,
+      autoplay: {
+        delay: 5000,
+      },
       centeredSlides: true,
       // slidesPerGroupAuto: true,
       loop: true,
@@ -52,6 +54,26 @@ function initSliders() {
       slidesPerView: "auto",
       // spaceBetween: 32,
       speed: 800,
+    });
+  }
+  if (document.querySelector(".reviews__slider")) {
+    new Swiper(".reviews__slider", {
+      autoHeight: true,
+      autoplay: {
+        delay: 5000,
+      },
+      centeredSlides: true,
+      // slidesPerGroupAuto: true,
+      loop: true,
+      // observer: true,
+      // observeParents: true,
+      slidesPerView: 1,
+      // spaceBetween: 32,
+      speed: 800,
+      navigation: {
+        prevEl: '.reviews__arrow_prev',
+        nextEl: '.reviews__arrow_next'
+      }
     });
   }
 }

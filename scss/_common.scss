@@ -74,6 +74,10 @@
   border: rem(1) solid $color-secondary-darker;
   @include adaptiveValue("margin-left", -19, -13, $containerWidth, $br-maw-lg);
   @include adaptiveValue("padding", 19, 2);
+  
+  &_color-white {
+    border-color: $color-white;
+  }
 }
 
 .section-title {
